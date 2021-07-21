@@ -1,33 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/Theme.KotlinSwitch.AppBarOverlay">
+	<android.support.v7.widget.Toolbar
+		android:id="@+id/toolbar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/colorPrimary"
+		android:minHeight="?attr/actionBarSize"
+		app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.KotlinSwitch.PopupOverlay" />
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:paddingTop="10dp"
+		android:paddingBottom="10dp"
+		android:paddingEnd="30dp"
+		android:paddingStart="30dp">
 
-    </com.google.android.material.appbar.AppBarLayout>
+		<android.support.design.widget.TextInputLayout
+			android:id="@+id/inputLayoutName"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="30dp">
 
-    <include layout="@layout/content_main" />
+			<EditText
+				android:id="@+id/etName"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="30dp"
+				android:hint="@string/et_your_name"/>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+		</android.support.design.widget.TextInputLayout>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+		<Button
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:onClick="saveName"
+			android:text="@string/btn_save_name"/>
+
+		<android.support.design.widget.TextInputLayout
+			android:id="@+id/inputLayoutRepoName"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="30dp">
+
+			<EditText
+				android:id="@+id/etRepoName"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:hint="@string/et_repository_search"/>
+		</android.support.design.widget.TextInputLayout>
+
+		<android.support.design.widget.TextInputLayout
+			android:id="@+id/inputLayoutLanguage"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<EditText
+				android:id="@+id/etLanguage"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:hint="@string/et_language"/>
+		</android.support.design.widget.TextInputLayout>
+
+		<Button
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:onClick="listRepositories"
+			android:text="@string/btn_search_repositories"/>
+
+		<android.support.design.widget.TextInputLayout
+			android:id="@+id/inputLayoutGithubUser"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="30dp">
+
+			<EditText
+				android:id="@+id/etGithubUser"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:hint="@string/et_hint_github_username"/>
+
+		</android.support.design.widget.TextInputLayout>
+
+		<Button
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:onClick="listUserRepositories"
+			android:text="@string/btn_search_github_user"/>
+
+	</LinearLayout>
+
+</LinearLayout>
