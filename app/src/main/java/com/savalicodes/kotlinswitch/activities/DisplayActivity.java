@@ -13,7 +13,19 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.Toolbar;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.navigation.NavigationView;
+import com.savalicodes.kotlinswitch.R;
+import com.savalicodes.kotlinswitch.adapters.DisplayAdapter;
+import com.savalicodes.kotlinswitch.models.Repository;
+import com.savalicodes.kotlinswitch.retrofit.GithubAPIService;
+import com.savalicodes.kotlinswitch.retrofit.RetrofitClient;
 import com.sriyank.javatokotlindemo.R;
 import com.sriyank.javatokotlindemo.adapters.DisplayAdapter;
 import com.sriyank.javatokotlindemo.app.Constants;
@@ -51,7 +63,7 @@ public class DisplayActivity extends AppCompatActivity implements NavigationView
 		setContentView(R.layout.activity_display);
 
 		Toolbar toolbar = findViewById(R.id.toolbar);
-		setSupportActionBar(toolbar);
+		setSupportActionBar(findViewById(R.id.toolbar));
 		getSupportActionBar().setTitle("Showing Browsed Results");
 
 		mRecyclerView = findViewById(R.id.recyclerView);
