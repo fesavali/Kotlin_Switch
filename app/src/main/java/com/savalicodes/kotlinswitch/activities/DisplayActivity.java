@@ -185,15 +185,6 @@ public class DisplayActivity extends AppCompatActivity implements NavigationView
 		mDisplayAdapter.swap(browsedRepositories);
 	}
 
-	private void showBookmarks() {
-		mRealm.executeTransaction(new Realm.Transaction() {
-			@Override
-			public void execute(Realm realm) {
-				RealmResults<Repository> repositories = realm.where(Repository.class).findAll();
-				mDisplayAdapter.swap(repositories);
-			}
-		});
-	}
 
 	private void closeDrawer() {
 		mDrawerLayout.closeDrawer(GravityCompat.START);
