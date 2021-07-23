@@ -55,7 +55,6 @@ public class DisplayActivity extends AppCompatActivity implements NavigationView
 	private DisplayAdapter mDisplayAdapter;
 	private List<Repository> browsedRepositories;
 	private GithubAPIService mService;
-	private Realm mRealm;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -72,12 +71,11 @@ public class DisplayActivity extends AppCompatActivity implements NavigationView
 		mRecyclerView.setLayoutManager(layoutManager);
 
 		mService = RetrofitClient.getGithubAPIService();
-		mRealm = Realm.getDefaultInstance();
 
-		NavigationView navigationView = findViewById(R.id.nav_view);
-		navigationView.setNavigationItemSelectedListener(this);
+		NavigationView navigationView = findViewById(R.id.navigationView);
+		navigationView.setNavigationItemSelectedListener(DisplayActivity.this);
 
-		mDrawerLayout = findViewById(R.id.drawer_layout);
+		mDrawerLayout = findViewById(R.id.drawerLayout);
 		ActionBarDrawerToggle drawerToggle
 				= new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
 		mDrawerLayout.addDrawerListener(drawerToggle);
