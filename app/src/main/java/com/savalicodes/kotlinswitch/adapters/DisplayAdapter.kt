@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import com.sriyank.javatokotlindemo.R
 import com.sriyank.javatokotlindemo.extensions.toast
 import com.sriyank.javatokotlindemo.models.Repository
-import io.realm.Realm
+
 import kotlinx.android.synthetic.main.list_item.view.*
 
 
@@ -71,20 +71,6 @@ class DisplayAdapter(private val context: Context, private var repositoryList: L
 			this.current = current
 		}
 
-		private fun bookmarkRepository(current: Repository?) {
-
-			current?.let {
-				val realm = Realm.getDefaultInstance()
-				realm.executeTransactionAsync({
-					realm -> realm.copyToRealmOrUpdate(current)
-				}, {
-					context.toast("Bookmarked Successfully")
-				}, {
-					context.toast("Error Occurred")
-				})
-			}
-		}
-	}
 
 	companion object {
 
