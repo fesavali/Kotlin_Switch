@@ -3,7 +3,7 @@
 	<string name="app_name">Java To Kotlin Demo</string>
 
 	<string name="drawer_open">Get In</string>
-	<string name="drawer_close">Go</string>
+	<string name="drawer_close">Go Out</string>
 
 	<string name="et_your_name">Your Name</string>
 	<string name="btn_save_name">Save Name</string>
