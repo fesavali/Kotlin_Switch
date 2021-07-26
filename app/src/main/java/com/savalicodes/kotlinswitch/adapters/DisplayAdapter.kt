@@ -21,10 +21,7 @@ class DisplayAdapter(private val context: Context, private var repositoryList: L
 		return MyViewHolder(view)
 	}
 
-	override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-		val current = repositoryList[position]
-		holder.setData(current, position)
-	}
+
 
 	override fun getItemCount(): Int = repositoryList.size
 
