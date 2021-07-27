@@ -32,7 +32,7 @@ class DisplayAdapter(private val context: Context, private var repositoryList: L
 		if (dataList.isEmpty())
 			context.toast("No Items Found")
 		repositoryList = dataList
-		notifyDataSetChanged()
+
 	}
 
 	inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
