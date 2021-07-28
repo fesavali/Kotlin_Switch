@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,12 +25,12 @@ public class DisplayAdapter extends RecyclerView.Adapter<DisplayAdapter.MyViewHo
 
 	private List<Repository> mData;
 	private LayoutInflater inflater;
-	private Context mContext;
+	private Context mContexts;
 
 	public DisplayAdapter(Context context, List<Repository> items) {
 		inflater = LayoutInflater.from(context);
 		this.mData = items;
-		this.mContext = context;
+		this.mContexts = context;
 	}
 
 	@Override
@@ -55,7 +54,7 @@ public class DisplayAdapter extends RecyclerView.Adapter<DisplayAdapter.MyViewHo
 	public void swap(List<Repository> data)
 	{
 		if (data.size() == 0)
-			Util.showMessage(mContext, "No Items Found");
+			Util.showMessage(mContexts, "No Items Found");
 		mData = data;
 		notifyDataSetChanged();
 	}
@@ -90,8 +89,8 @@ public class DisplayAdapter extends RecyclerView.Adapter<DisplayAdapter.MyViewHo
 					String url = current.getHtmlUrl();
 					Uri webpage = Uri.parse(url);
 					Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
-					if (intent.resolveActivity(mContext.getPackageManager()) != null) {
-						mContext.startActivity(intent);
+					if (intent.resolveActivity(mContexts.getPackageManager()) != null) {
+						mContexts.startActivity(intent);
 					}
 				}
 			});
