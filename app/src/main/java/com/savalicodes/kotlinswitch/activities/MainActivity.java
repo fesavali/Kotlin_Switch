@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 	private static final String TAG = MainActivity.class.getSimpleName();
 
 	private EditText etName, etGithubRepoName, etLanguage, etGithubUser;
-	private TextInputLayout inputLayoutName, inputLayoutRepoName, inputLayoutGithubUser;
+	private TextInputLayout inputName, inputLayoutRepoName, inputLayoutGithubUser;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 		etLanguage 		 = findViewById(R.id.etLanguage);
 		etGithubUser 	 = findViewById(R.id.etGithubUser);
 
-		inputLayoutName   	  = findViewById(R.id.inputLayoutName);
+		inputName = findViewById(R.id.inputLayoutName);
 		inputLayoutRepoName   = findViewById(R.id.inputLayoutRepoName);
 		inputLayoutGithubUser = findViewById(R.id.inputLayoutGithubUser);
 	}
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 	/** Save app username in SharedPreferences */
 	public void saveName(View view) {
 
-		if (isNotEmpty(etName, inputLayoutName)) {
+		if (isNotEmpty(etName, inputName)) {
 			String personName = etName.getText().toString();
 
 			SharedPreferences sp = getSharedPreferences(Constants.APP_SHARED_PREFERENCES, MODE_PRIVATE);
