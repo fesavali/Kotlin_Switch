@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.sriyank.javatokotlindemo.R
 import com.sriyank.javatokotlindemo.app.Constants
-import com.sriyank.javatokotlindemo.extensions.isNotEmpty
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -28,10 +27,10 @@ class MainActivity : AppCompatActivity() {
 	fun saveName(view: View) {
 
 		if (etName.isNotEmpty(inputLayoutName)) {
-			val personName = etName.text.toString()
+			val personSname = etName.text.toString()
 			val sp = getSharedPreferences(Constants.APP_SHARED_PREFERENCES, Context.MODE_PRIVATE)
 			val editor = sp.edit()
-			editor.putString(Constants.KEY_PERSON_NAME, personName)
+			editor.putString(Constants.KEY_PERSON_NAME, personSname)
 			editor.apply()
 		}
 	}
