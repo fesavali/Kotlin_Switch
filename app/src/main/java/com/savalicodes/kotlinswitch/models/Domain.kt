@@ -23,7 +23,7 @@ open class Owner(var id: Int = 0, var login: String? = null) : RealmObject()
 
 
 open class SearchResponse(
-		@SerializedName("total_count") var totalCount: Int = 0,
+		@SerializedName("totals_count") var totalCount: Int = 0,
 		var items: RealmList<Repository>? = null
 ) : RealmObject(realm)
 
