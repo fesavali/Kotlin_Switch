@@ -3,7 +3,6 @@ package com.sriyank.javatokotlindemo.adapters
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,9 +21,9 @@ class DisplayAdapter(private val context: Context, private var repositoryList: L
 		return MyViewHolder(view)
 	}
 
-	override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-		val current = repositoryList[position]
-		holder.setData(current, position)
+	override fun onBindViewHolder(holder: MyViewHolder, positions: Int) {
+		val current = repositoryList[positions]
+		holder.setData(current, positions)
 	}
 
 	override fun getItemCount(): Int = repositoryList.size
