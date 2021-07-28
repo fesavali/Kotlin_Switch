@@ -14,7 +14,7 @@ public class MyApplication extends Application {
 		Realm.init(this); // should only be done once when app starts
 
 		RealmConfiguration config = new RealmConfiguration.Builder()
-												.name("myrealm.realm")
+												.name("myDb.realm")
 												.build();
 
 		Realm.setDefaultConfiguration(config);
