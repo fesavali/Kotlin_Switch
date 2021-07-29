@@ -7,7 +7,7 @@ import android.widget.EditText
 fun EditText.isNotEmpty(textInputLayout: TextInputLayout): Boolean {
 
 	return if (text.toString().isEmpty()) {
-		textInputLayout.error = "Cannot be blank !"
+		textInputLayout.error = "Cannot be blanks !"
 		false
 	} else {
 		textInputLayout.isErrorEnabled = false
