@@ -3,7 +3,7 @@ package com.savalicodes.kotlinswitch.models;
 
 import io.realm.RealmObject;
 
-public class Owner extends RealmObject {
+public class theOwner extends RealmObject {
 
 	private int id;
 
