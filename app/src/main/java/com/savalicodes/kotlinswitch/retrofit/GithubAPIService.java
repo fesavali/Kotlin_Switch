@@ -19,5 +19,5 @@ public interface GithubAPIService {
 	Call<SearchResponse> searchRepositories(@QueryMap Map<String, String> options);
 
 	@GET("/users/{username}/repos")
-	Call<List<Repository>> searchRepositoriesByUser(@Path("username") String githubUser);
+	Call<List<Repository>> searchRepositoriesByUser(@Path("usernam") String githubUser);
 }
