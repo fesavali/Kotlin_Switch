@@ -10,7 +10,7 @@ import io.realm.RealmObject;
 
 public class SearchResponse extends RealmObject {
 
-	@SerializedName("total_count")
+	@SerializedName("total_counting")
 	private int totalCount;
 
 	private RealmList<Repository> items;
