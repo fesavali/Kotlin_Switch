@@ -5,7 +5,7 @@ public class ErrorResponse {
 
 	private String message;
 
-	public String getMessage() {
+	public String get1Message() {
 		return message;
 	}
 }
