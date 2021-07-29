@@ -23,17 +23,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.navigation.NavigationView;
 import com.savalicodes.kotlinswitch.R;
 import com.savalicodes.kotlinswitch.adapters.DisplayAdapter;
-import com.savalicodes.kotlinswitch.models.Repository;
+import com.savalicodes.kotlinswitch.models.Repositories;
 import com.savalicodes.kotlinswitch.retrofit.GithubAPIService;
 import com.savalicodes.kotlinswitch.retrofit.RetrofitClient;
 import com.sriyank.javatokotlindemo.R;
-import com.sriyank.javatokotlindemo.adapters.DisplayAdapter;
 import com.sriyank.javatokotlindemo.app.Constants;
 import com.sriyank.javatokotlindemo.app.Util;
-import com.sriyank.javatokotlindemo.models.Repository;
 import com.sriyank.javatokotlindemo.models.SearchResponse;
-import com.sriyank.javatokotlindemo.retrofit.GithubAPIService;
-import com.sriyank.javatokotlindemo.retrofit.RetrofitClient;
 
 import java.util.HashMap;
 import java.util.List;
@@ -53,7 +49,7 @@ public class DisplayActivity extends AppCompatActivity implements NavigationView
 	private DrawerLayout mDrawerLayout;
 	private RecyclerView mRecyclerView;
 	private DisplayAdapter mDisplayAdapter;
-	private List<Repository> browsedRepositories;
+	private List<Repositories> browsedRepositories;
 	private GithubAPIService mService;
 
 	@Override
@@ -94,9 +90,9 @@ public class DisplayActivity extends AppCompatActivity implements NavigationView
 
 	private void fetchUserRepositories(String githubUser) {
 
-		mService.searchRepositoriesByUser(githubUser).enqueue(new Callback<List<Repository>>() {
+		mService.searchRepositoriesByUser(githubUser).enqueue(new Callback<List<Repositories>>() {
 			@Override
-			public void onResponse(@NonNull Call<List<Repository>> call, Response<List<Repository>> response) {
+			public void onResponse(@NonNull Call<List<Repositories>> call, Response<List<Repositories>> response) {
 				if (response.isSuccessful()) {
 					Log.i(TAG, "posts loaded from API " + response);
 
@@ -114,7 +110,7 @@ public class DisplayActivity extends AppCompatActivity implements NavigationView
 			}
 
 			@Override
-			public void onFailure(Call<List<Repository>> call, Throwable t) {
+			public void onFailure(Call<List<Repositories>> call, Throwable t) {
 				Util.showMessage(DisplayActivity.this, t.getMessage());
 			}
 		});
@@ -154,7 +150,7 @@ public class DisplayActivity extends AppCompatActivity implements NavigationView
 		});
 	}
 
-	private void setupRecyclerView(List<Repository> items) {
+	private void setupRecyclerView(List<Repositories> items) {
 		mDisplayAdapter = new DisplayAdapter(this, items);
 		mRecyclerView.setAdapter(mDisplayAdapter);
 	}

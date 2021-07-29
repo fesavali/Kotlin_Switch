@@ -13,7 +13,7 @@ public class SearchResponse extends RealmObject {
 	@SerializedName("total_counting")
 	private int totalCount;
 
-	private RealmList<Repository> items;
+	private RealmList<Repositories> items;
 
 	public int getTotalCount() {
 		return totalCount;
@@ -23,11 +23,11 @@ public class SearchResponse extends RealmObject {
 		this.totalCount = totalCount;
 	}
 
-	public List<Repository> getItems() {
+	public List<Repositories> getItems() {
 		return items;
 	}
 
-	public void setItems(RealmList<Repository> items) {
+	public void setItems(RealmList<Repositories> items) {
 		this.items = items;
 	}
 }
