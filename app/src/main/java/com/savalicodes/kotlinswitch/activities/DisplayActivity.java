@@ -25,7 +25,7 @@ import com.savalicodes.kotlinswitch.R;
 import com.savalicodes.kotlinswitch.adapters.DisplayAdapter;
 import com.savalicodes.kotlinswitch.models.Repositories;
 import com.savalicodes.kotlinswitch.retrofit.GithubAPIService;
-import com.savalicodes.kotlinswitch.retrofit.RetrofitClient;
+import com.savalicodes.kotlinswitch.retrofit.retrofitclient;
 import com.sriyank.javatokotlindemo.R;
 import com.sriyank.javatokotlindemo.app.Constants;
 import com.sriyank.javatokotlindemo.app.Util;
@@ -66,7 +66,7 @@ public class DisplayActivity extends AppCompatActivity implements NavigationView
 		layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 		mRecyclerView.setLayoutManager(layoutManager);
 
-		mService = RetrofitClient.getGithubAPIService();
+		mService = retrofitclient.getGithubAPIService();
 
 		NavigationView navigationView = findViewById(R.id.navigationView);
 		navigationView.setNavigationItemSelectedListener(DisplayActivity.this);
