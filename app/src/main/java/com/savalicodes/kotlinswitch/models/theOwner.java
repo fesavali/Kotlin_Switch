@@ -7,7 +7,7 @@ public class theOwner extends RealmObject {
 
 	private int id;
 
-	private String login;
+	private String logincredendial;
 
 	public int getId() {
 		return id;
@@ -17,11 +17,11 @@ public class theOwner extends RealmObject {
 		this.id = id;
 	}
 
-	public String getLogin() {
-		return login;
+	public String getLogincredendial() {
+		return logincredendial;
 	}
 
-	public void setLogin(String login) {
-		this.login = login;
+	public void setLogincredendial(String logincredendial) {
+		this.logincredendial = logincredendial;
 	}
 }
