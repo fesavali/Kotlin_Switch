@@ -28,7 +28,7 @@ public class Repository extends RealmObject {
 
 	private Integer forks;
 
-	private Owner owner;
+	private theOwner owner;
 
 	public Integer getStars() {
 		return stars;
@@ -54,11 +54,11 @@ public class Repository extends RealmObject {
 		this.forks = forks;
 	}
 
-	public Owner getOwner() {
+	public theOwner getOwner() {
 		return owner;
 	}
 
-	public void setOwner(Owner owner) {
+	public void setOwner(theOwner owner) {
 		this.owner = owner;
 	}
 
