@@ -14,7 +14,7 @@ class MyApplication : Application() {
 		Realm.init(this) // should only be done once when app starts
 
 		val config = RealmConfiguration.Builder()
-				.name("myrealm.realm")
+				.name("yrealm.realm")
 				.build()
 
 		Realm.setDefaultConfiguration(config)
