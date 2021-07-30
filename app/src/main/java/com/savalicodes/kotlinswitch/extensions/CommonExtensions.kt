@@ -17,7 +17,7 @@ fun Context.showErrorMessage(errorBody: ResponseBody, duration: Int = Toast.LENG
 		val errorResponse = gson.fromJson(errorBody.string(), ErrorResponse::class.java)
 		toast(errorResponse.message!!, duration)
 	} catch (e: IOException) {
-		Log.e("Exceptions ", e.toString())
+
 	}
 }
 
